@@ -1,0 +1,1 @@
+This is a Learning English rails app I create for my wdi project 1 at GA.
