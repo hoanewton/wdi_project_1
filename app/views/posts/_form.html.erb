@@ -1,0 +1,17 @@
+<ul>
+	<% @post.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+</ul>
+
+<%= form_for @post do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<br>
+
+	<%= f.label :content %>
+	<%= f.text_area(:content, :size => "30x10" ) %>
+	<br>
+	
+	<%= f.submit %>
+<% end %>	

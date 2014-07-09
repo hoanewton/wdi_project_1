@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
 	has_many :votes, dependent: :destroy
 	has_many :posts, dependent: :destroy
 
-
-	validates :username, :first_name, presence: true
+	validates_presence_of :username, :first_name
 	validates :username, uniqueness: true
 end

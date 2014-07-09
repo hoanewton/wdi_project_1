@@ -43,5 +43,5 @@ gem 'httparty'
 group :development do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers'
 end
