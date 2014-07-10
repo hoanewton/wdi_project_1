@@ -9,7 +9,6 @@ Created: <%= @post.created_at.to_date %>
 		<%= render :partial => 'comments/comment', locals: {comment: comment} %>
 	<% end %><br>
 
-	By: <%= current_user.username %>
 <% end %>
 
 <%= render :partial => 'comments/form' %>

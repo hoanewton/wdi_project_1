@@ -1,6 +1,11 @@
 <ul>
 	<li><%= comment.content %></li>
 	Commented: <%= comment.created_at.to_date %><br>
-	By: <%= current_user.first_name %>
+	By: <%= comment.user.username %>
+
+	<% if current_user && current_user.id == comment.user.id %><br>
+		<%= link_to "Edit", edit_comment_path(comment) %>
+		<%= link_to "Delete", comment_path(comment), method: :delete %>
+	<% end %>
 	<hr>
 </ul>

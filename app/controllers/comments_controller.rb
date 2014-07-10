@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
-      redirect_to comments_path
+      redirect_to post_path(@comment.post)
     else
       render :edit
     end
@@ -39,9 +39,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
+    post = @comment.post
     @comment.destroy
-    session[:current_user] = nil
-    redirect_to comments_path
+    redirect_to post_path(post)
   end
 
   private
