@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :users, :comments, :posts, :votes 
-  # get '/users/' => 'users#index'
+  resources :users, except: [:show]
+
+  resources :posts do
+  	resources :comments, only: [:create, :destroy], :shallow => true do
+	  	resources :votes, only: [:create, :destroy]
+	  end
+  end	
   
   root 'welcome#index'
   get '/login' => 'sessions#new'

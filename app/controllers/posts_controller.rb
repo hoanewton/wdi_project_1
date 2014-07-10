@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   	@post = Post.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
+    # @user = @post.user 
   end
 
   def create
@@ -49,6 +50,7 @@ class PostsController < ApplicationController
 
 
   private
+
   def post_params
     params.require(:post).permit(:title, :content)
   end

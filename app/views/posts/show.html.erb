@@ -4,14 +4,17 @@ By: <%= @post.user.username %><br>
 Created: <%= @post.created_at.to_date %>
 
 <% if @post.comments %>
+<h4>All comments</h4>
 	<% @post.comments.each do |comment| %>
-		<%= render :partial => 'comments/comment' %>
-	<% end %>
+		<%= render :partial => 'comments/comment', locals: {comment: comment} %>
+	<% end %><br>
+
+	By: <%= current_user.username %>
 <% end %>
 
 <%= render :partial => 'comments/form' %>
 
 <% if current_user && current_user.id == @post.user.id %><br>
-		<%= link_to 'Edit', edit_post_path(@post) %>
-		<%= link_to 'Delete', post_path(@post), method: :delete %>
-	<% end %>
+	<%= link_to 'Edit', edit_post_path(@post) %>
+	<%= link_to 'Delete', post_path(@post), method: :delete %>
+<% end %>

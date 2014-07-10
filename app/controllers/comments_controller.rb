@@ -8,13 +8,17 @@ class CommentsController < ApplicationController
 	end
 
 	def new
+    @post = Post.find(params[:id])
     @comment = Comment.new
   end
 
   def create
-    @comment = Comment.new
+    @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to post_path(@comment.post)
+      post = Post.find(params[:post_id])
+      post.comments << @comment
+      current_user.comments << @comment
+      redirect_to post_path(post)
     else
       redirect_to posts_path
     end
@@ -39,7 +43,6 @@ class CommentsController < ApplicationController
     session[:current_user] = nil
     redirect_to comments_path
   end
-
 
   private
   def comment_params

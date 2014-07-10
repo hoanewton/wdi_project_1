@@ -1,4 +1,6 @@
 <ul>
 	<li><%= comment.content %></li>
-	<%= comment.created_at %><hr>
+	Commented: <%= comment.created_at.to_date %><br>
+	By: <%= current_user.first_name %>
+	<hr>
 </ul>
