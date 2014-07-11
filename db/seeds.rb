@@ -1,4 +1,3 @@
-
 Post.destroy_all
 User.destroy_all
 
@@ -6,6 +5,7 @@ admin = User.create!(
 	username: "admin",
 	first_name: "Hoa",
 	last_name: "Newton",
+	admin: true,
 	password: "123"
 	)
 

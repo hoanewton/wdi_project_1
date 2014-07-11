@@ -44,6 +44,10 @@ class CommentsController < ApplicationController
     redirect_to post_path(post)
   end
 
+  def vote_calculator
+    Comment.find(params[:comment_id]).votes.map { |v| v.number }.reduce(:+)
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:content)

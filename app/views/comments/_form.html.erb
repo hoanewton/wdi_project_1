@@ -1,8 +1,10 @@
 <%= form_for [@post, @comment] do |f| %>
 
 	<%= f.label :content %>
-	<%= f.text_area(:content, :size => "80x10" ) %>
+	<%= f.text_area(:content, :size => "80x10") %>
 	<hr>
 	
 	<%= f.submit %>
 <% end %>	
+
+

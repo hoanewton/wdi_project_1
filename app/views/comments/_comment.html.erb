@@ -5,7 +5,13 @@
 
 	<% if current_user && current_user.id == comment.user.id %><br>
 		<%= link_to "Edit", edit_comment_path(comment) %>
-		<%= link_to "Delete", comment_path(comment), method: :delete %>
+		<%= link_to "Delete", comment_path(comment), method: :delete %><br>
+	<% end %>
+
+	<% if current_user && current_user.id != comment.user.id %><br>
+		<%= form_for :vote, as: :vote, url: comment_votes_path(comment), method: :post do |f| %>
+			<%= f.submit value = "Vote Up" %>
+		<% end %> 
 	<% end %>
 	<hr>
 </ul>
