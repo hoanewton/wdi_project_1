@@ -4,27 +4,22 @@ class VotesController < ApplicationController
   before_action :authenticate, only: [:new, :create]
 
 	def create
-		#Check for the existing vote, unable user to vote more than once
-		# if Vote.where(user_id: current_user.id, comment_id: comment_id).count == 0
-			@vote = Vote.create!(
-				user_id: session[:current_user],
-				comment_id: params[:comment_id],
-				number: 1
-				)
-			redirect_to post_path(@vote.comment.post)
-		# end
-		# redirect_to post_path(@post)
-	end
+		if params[:commit] == "Vote Up" 
+			vote_score = 1 
+		elsif params[:commit] == "Vote Down"
+			vote_score = -1
+		else
+			# throw an exception
+			raise 'Received an invalid vote type'
+		end
 
-	# def create
- #    if @vote
- #    	post = Post.find(params[:id])
- #      comment = Comment.find(params[:comment_id])
- #      comment.votes << @vote
- #      current_user.votes << @vote
- #      redirect_to post_path(@post)
- #    end
- #  end
+		@vote = Vote.create!(
+			user_id: session[:current_user],
+			comment_id: params[:comment_id],
+			number: vote_score
+		)
+		redirect_to post_path(@vote.comment.post)
+	end
 
 	def update
     @vote = Vote.find(params[:id])
