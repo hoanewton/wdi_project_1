@@ -41,6 +41,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     post = @comment.post
     @comment.destroy
+    flash[:notice] = "Comment deleted!"
     redirect_to post_path(post)
   end
 
@@ -50,8 +51,10 @@ class CommentsController < ApplicationController
   end
 
   def comment_authorization
-    unless current_user == Comment.find(params[:id]).user
-      redirect_to posts_path
+    @comment = Comment.find(params[:id])
+    if current_user != @comment.user && !current_user.admin?
+      flash[:notice] = "You're not authorized for that action!"
+      redirect_to post_path(@comment.post)
     end 
   end
 

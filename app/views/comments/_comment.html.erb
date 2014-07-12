@@ -4,7 +4,7 @@
 	By: <%= comment.user.username %> |
 	Votes total: <%= comment.votes_total %>
 
-	<% if current_user && current_user.id == comment.user.id %><br>
+	<% if current_user && (current_user.id == comment.user.id || current_user.admin?) %><br>
 		<%= link_to "Edit", edit_comment_path(comment) %>
 		<%= link_to "Delete", comment_path(comment), method: :delete %><br>
 	<% end %>
