@@ -1,7 +1,8 @@
 <ul>
 	<li><%= comment.content %></li>
-	Commented: <%= comment.created_at.to_date %><br>
-	By: <%= comment.user.username %>
+	Commented: <%= comment.created_at.to_date %> |
+	By: <%= comment.user.username %> |
+	Votes total: <%= comment.votes_total %>
 
 	<% if current_user && current_user.id == comment.user.id %><br>
 		<%= link_to "Edit", edit_comment_path(comment) %>
