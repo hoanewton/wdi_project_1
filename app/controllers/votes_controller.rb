@@ -4,27 +4,26 @@ class VotesController < ApplicationController
   before_action :authenticate, only: [:new, :create]
 
 	def create
-		@vote = Vote.create(
-			user_id: session[:current_user],
-			comment_id: params[:comment_id],
-			number: 1
-			)
-		redirect_to post_path(@vote.comment.post)
+		#Check for the existing vote, unable user to vote more than once
+		# if Vote.where(user_id: current_user.id, comment_id: comment_id).count == 0
+			@vote = Vote.create!(
+				user_id: session[:current_user],
+				comment_id: params[:comment_id],
+				number: 1
+				)
+			redirect_to post_path(@vote.comment.post)
+		# end
+		# redirect_to post_path(@post)
 	end
 
 	# def create
- #    @vote = Vote.create(
-	# 		user_id: session[:current_user].user_id
-	# 		comment_id: Comment.find(params[:id])
-	# 		number: 1
-	# 		)
- #    # if @vote
- #    # 	post = Post.find(params[:id])
- #    #   comment = Comment.find(params[:comment_id])
- #    #   comment.votes << @vote
- #    #   current_user.votes << @vote
+ #    if @vote
+ #    	post = Post.find(params[:id])
+ #      comment = Comment.find(params[:comment_id])
+ #      comment.votes << @vote
+ #      current_user.votes << @vote
  #      redirect_to post_path(@post)
- #    # end
+ #    end
  #  end
 
 	def update
@@ -39,7 +38,7 @@ class VotesController < ApplicationController
   private
 
   def vote_authorization
-    unless current_user == Comment.find(params[:comment_id]).user
+    unless current_user != Comment.find(params[:comment_id]).user
       redirect_to post_path(Comment.find(params[:comment_id]).post)
     end 
   end

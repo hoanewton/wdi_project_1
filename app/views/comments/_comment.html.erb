@@ -9,9 +9,14 @@
 	<% end %>
 
 	<% if current_user && current_user.id != comment.user.id %><br>
-		<%= form_for :vote, as: :vote, url: comment_votes_path(comment), method: :post do |f| %>
-			<%= f.submit value = "Vote Up" %>
-		<% end %> 
+		<% if Vote.where(user_id: current_user.id, comment_id: comment.id).count == 0 %>
+			<%= form_for :vote, as: :vote, url: comment_votes_path(comment), method: :post do |f| %>
+				<%= f.submit value = "Vote Up" %>
+			<% end %> 
+		<% end %>
 	<% end %>
 	<hr>
 </ul>
+
+
+<%= debug(params) %>
