@@ -37,11 +37,18 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#gem for API call
 gem 'pry-rails'
 gem 'httparty'
 
+#gem for rpsec
 group :development do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers'
 end
+
+#gem for whenever - time-based job run periodically
+gem 'whenever', :require => false
+
