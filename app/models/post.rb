@@ -15,6 +15,7 @@ class Post < ActiveRecord::Base
 
 	def self.autopost
 		article = Post.autogenerate
+		article[:title] = "Blank Title" if article[:title].nil?
 		Post.create!(
 			title: article[:title],
 			content: article[:content],
