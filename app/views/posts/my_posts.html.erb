@@ -1,4 +1,5 @@
 <h3>All my posts:</h3>
+<%= image_tag "GetYourShit.jpg" %><br>
  <% @posts.each do |post| %>
 
 	<h4><%= link_to post.title, post_path(post) %></h4>
