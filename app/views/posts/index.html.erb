@@ -1,4 +1,4 @@
-<h3>All posts</h3><h5><%= link_to "Sort posts by the most commented", sorted_posts_path %><br><%= link_to "Show all of My Posts", my_posts_path %></h5><hr>
+<h2>ALL POSTS</h2><h4><%= link_to "Sort posts by the most commented", sorted_posts_path %><br><%= link_to "Show all of My Posts", my_posts_path %></h4><hr>
 <% @posts.each do |post| %>
 	<ul>
 		<li><h4><%= link_to post.title, post_path(post) %></h4></li>

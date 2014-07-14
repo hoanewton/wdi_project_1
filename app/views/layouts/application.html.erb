@@ -7,25 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!-- Add messages onto loggin/logout/login failure -->
-  <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
-  <% end %>
-  
-	<p>
-  <% if current_user %>
-    Welcome back, <%= current_user.first_name %>!<br>
-    <%= link_to "Home", root_path %> |
-    <%= link_to 'Log Out', logout_path %> |
-  <% else %>
-    <%= link_to 'Log In', login_path %> |
-    <%= link_to 'Sign Up', new_user_path %> |
-  <% end %>
-  <%= link_to 'Posts', posts_path %> |
-  <%= link_to 'Users', users_path %>
-  </p>
-
+  <h1 class='top'>Learning English</h1>
+  <div class="head">
+    <!-- Add messages onto loggin/logout/login failure -->
+    <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+    
+  	<h3>
+    <% if current_user %>
+     Welcome back, <%= current_user.first_name %>!<br>
+      <%= link_to "Home", root_path %> |
+      <%= link_to 'Log Out', logout_path %> |
+    <% else %>
+      <%= link_to 'Log In', login_path %> |
+      <%= link_to 'Sign Up', new_user_path %> |   
+    <% end %>   
+      <%= link_to 'Posts', posts_path %> |
+      <%= link_to 'Users', users_path %>    
+    </h3>
+  </div>
 <%= yield %>
-
+  
+  <footer>
+    <p class="footer">
+      <small>&copy; 2014 Hoa's project. All Rights Reserved.</small>
+    </p>
+</footer>
 </body>
 </html>

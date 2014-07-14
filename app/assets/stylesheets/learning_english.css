@@ -1,10 +1,13 @@
+@import url(http://fonts.googleapis.com/css?family=Sigmar+One);
+
 .notice {
 	color: green;
 }
 
 body {
 	text-align: center;
-	/*font-family: Helvetica;*/
+	width: 860px;
+	margin: 0 auto;
 }
 
 ul {
@@ -14,4 +17,23 @@ ul {
 img {
 	height: 350px;
 	width: 300px;
+}
+
+h2 {
+	font-weight: bolder;
+}
+
+.head {
+	border-bottom: 5px solid black;
+}
+
+.top {
+	font-family: 'Sigmar One', cursive;
+}
+
+.footer {
+  padding: 15px 0;
+  margin-top: 30px;
+  text-align: left;
+  border-top: 5px solid black;
 }
