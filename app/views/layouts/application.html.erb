@@ -11,6 +11,7 @@
   <% flash.each do |key, value| %>
     <div class="flash <%= key %>"><%= value %></div>
   <% end %>
+  
 	<p>
   <% if current_user %>
     Welcome back, <%= current_user.first_name %>!<br>
