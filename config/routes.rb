@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   
   root 'welcome#index'
   get '/my_posts' => 'posts#my_posts'
+  get '/sorted_posts' => 'posts#sorted_posts'
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
 	get '/logout' => 'sessions#destroy'

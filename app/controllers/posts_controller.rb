@@ -51,6 +51,10 @@ class PostsController < ApplicationController
     @posts = Post.where(user_id: current_user.id)
   end
 
+  def sorted_posts
+    @posts = Post.all
+  end
+
   private
 
   def post_params
