@@ -18,7 +18,3 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-
-every :sunday, :at => '8:25pm' do 
-  runner "Post.autopost"
-end
