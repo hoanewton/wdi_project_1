@@ -21,5 +21,5 @@ class Post < ActiveRecord::Base
 			user_id: User.where(username: "admin").first.id
 			)
 	end
-
+	
 end

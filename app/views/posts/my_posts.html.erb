@@ -1,0 +1,9 @@
+<h3>All my posts:</h3>
+ <% @posts.each do |post| %>
+
+	<h4><%= post.title %></h4>
+	<%= post.content %><br>
+	By: <%= post.user.username %><br>
+	Created: <%= post.created_at.to_datetime %>
+	<hr>
+<% end %>

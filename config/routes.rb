@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end	
   
   root 'welcome#index'
+  get '/my_posts' => 'posts#my_posts'
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
 	get '/logout' => 'sessions#destroy'

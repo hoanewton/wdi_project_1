@@ -1,4 +1,4 @@
-<h3>All posts</h3><hr>
+<h3>All posts</h3><h5><%= link_to "Show all of My Posts", my_posts_path %></h5><hr>
 <% @posts.each do |post| %>
 	<ul>
 		<li><h4><%= link_to post.title, post_path(post) %></h4></li>
