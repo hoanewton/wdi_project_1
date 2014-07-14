@@ -8,9 +8,9 @@
 </head>
 <body>
   <!-- Add messages onto loggin/logout/login failure -->
-  <% flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, class: name %>
-  <% end -%>
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+  <% end %>
 	<p>
   <% if current_user %>
     Welcome back, <%= current_user.first_name %>!<br>
