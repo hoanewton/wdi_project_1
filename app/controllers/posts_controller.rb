@@ -44,7 +44,6 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    session[:current_user] = nil
     redirect_to posts_path
   end
 
