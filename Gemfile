@@ -45,3 +45,7 @@ group :development do
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers'
 end
+
+group :production do 
+	gem 'rails_12factor' 
+end
