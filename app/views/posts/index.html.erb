@@ -2,7 +2,8 @@
 <% @posts.each do |post| %>
 	<ul>
 		<li><h4><%= link_to post.title, post_path(post) %></h4></li>
-		<%= post.content %>
+		<%= post.content %><br>
+		Posted: <%= post.created_at.to_date %> at <%= post.created_at.strftime("%H:%M:%S %Z") %>
 	</ul><hr>
 <% end %>
 <h4><%= link_to	"Add Post", new_post_path %></h4>

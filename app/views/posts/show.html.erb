@@ -1,7 +1,7 @@
 <h4><%= @post.title %></h4>
 <%= @post.content %><br>
 By: <%= @post.user.username %><br>
-Created: <%= @post.created_at.to_date %>
+Created: <%= @post.created_at.to_datetime %>
 
 <% if @post.comments %>
 <h4>All comments</h4>
