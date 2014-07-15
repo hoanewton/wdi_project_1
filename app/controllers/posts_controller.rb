@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    @posts = Post.where(user_id: current_user.id)
+    @posts = Post.where(user_id: current_user.id) if current_user
   end
 
   def sorted_posts
