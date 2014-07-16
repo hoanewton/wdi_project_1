@@ -1,7 +1,14 @@
-<h2>ALL POSTS</h2><h4><%= link_to "Sort posts by the most commented", sorted_posts_path %><br><%= link_to "Show all of My Posts", my_posts_path %></h4><hr>
+<h2>ALL POSTS</h2>
+<h4>
+	<%= link_to "Sort posts by the most commented", sorted_posts_path %><br>
+	<%= link_to "Show all of My Posts", my_posts_path %>
+</h4><hr>
+
 <% @posts.each do |post| %>
 	<ul>
-		<li><h4><%= link_to post.title, post_path(post) %></h4></li>
+		<li>
+			<h4><%= link_to post.title, post_path(post) %></h4>
+		</li>
 		<%= post.content %><br>
 		Posted: <%= post.created_at.to_date %> at <%= post.created_at.strftime("%H:%M:%S %Z") %> (<%= time_ago_in_words(post.created_at) %> ago)
 	</ul><hr>
