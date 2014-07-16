@@ -2,19 +2,9 @@
 <%= image_tag "GetYourShit.jpg" %><br>
 
 <% if current_user %>
-
-	<% @posts.each do |post| %>
-		<h4><%= link_to post.title, post_path(post) %></h4>
-		<%= post.content %><br>
-		By: <%= post.user.username %><br>
-		Created: <%= post.created_at.to_datetime %>
-		<hr>
-	<% end %>
-
+	<%= render 'show_all_posts' %>
 <% else %>
 	Please log in to see your posts!
-<% end %>
-
-</br>
+<% end %></br>
 
 <%= image_tag "unpossible.jpg" %><br>

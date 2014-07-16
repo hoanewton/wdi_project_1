@@ -4,7 +4,7 @@ Trello User stories:
 https://trello.com/b/aZbAUYpQ/hoa-learning-english
 
 ERD
-https://www.lucidchart.com/documents/edit/b1bfc7cf-b788-4b0e-9aa4-1e52a68309b6/0
+http://www.lucidchart.com/invitations/accept/cf3cc37b-454f-42ef-9425-9efc0f4e5fdc
 
 Heroku
 http://stark-island-6464.herokuapp.com/my_posts

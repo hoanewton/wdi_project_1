@@ -1,0 +1,8 @@
+<% @posts.sort_by	{ |post| post.created_at }.reverse.each do |post| %>
+	<ul>
+		<h4><%= link_to post.title, post_path(post) %></h4>
+		<%= post.content %><br>
+		By: <%= post.user.username %><br>
+		Posted: <%= post.created_at.to_date %> at <%= post.created_at.strftime("%H:%M:%S %Z") %> (<%= time_ago_in_words(post.created_at) %> ago)
+	</ul><hr>
+<% end %>

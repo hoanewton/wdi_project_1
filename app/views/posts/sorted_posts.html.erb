@@ -1,4 +1,5 @@
-<h3>Posts sorted by the most commented</h3><h5><%= link_to "Show all of My Posts", my_posts_path %></h5><hr>
+<h3>Posts sorted by the most commented</h3>
+<h5><%= link_to "Show all of My Posts", my_posts_path %></h5><hr>
 <%= image_tag "TakeControl.jpg" %>
 <% @posts.sort_by{ |post| post.comments.count }.reverse.each do |post| %>
 	<ul>

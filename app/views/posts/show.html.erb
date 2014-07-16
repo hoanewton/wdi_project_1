@@ -4,7 +4,7 @@ By: <%= @post.user.username %><br>
 Created: <%= @post.created_at.to_datetime %>
 
 <% if @post.comments %>
-<h4>All comments</h4>
+	<h4>All comments</h4>
 	<% @post.comments.each do |comment| %>
 		<%= render :partial => 'comments/comment', locals: { comment: comment } %>
 	<% end %><br>
