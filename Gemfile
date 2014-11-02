@@ -50,5 +50,8 @@ group :production do
 	gem 'rails_12factor' 
 end
 
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.3.0'
+gem 'autoprefixer-rails'
 
+gem 'bower-rails'
+gem 'angular-rails-templates'
