@@ -54,4 +54,5 @@ gem 'bootstrap-sass', '~> 3.3.0'
 gem 'autoprefixer-rails'
 
 gem 'bower-rails'
+gem 'angularjs-rails', '~> 1.3.2'
 gem 'angular-rails-templates'

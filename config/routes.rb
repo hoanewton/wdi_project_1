@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   root 'application#index'
   get '*path' => 'application#index'
 
-  get '/my_posts' => 'posts#my_posts'
-  get '/sorted_posts' => 'posts#sorted_posts'
-  get '/login' => 'sessions#new'
-  post '/sessions' => 'sessions#create'
-	get '/logout' => 'sessions#destroy'
+ #  get '/my_posts' => 'posts#my_posts'
+ #  get '/sorted_posts' => 'posts#sorted_posts'
+ #  get '/login' => 'sessions#new'
+ #  post '/sessions' => 'sessions#create'
+	# get '/logout' => 'sessions#destroy'
 
 end
